@@ -1,18 +1,11 @@
 defmodule DictionaryElixir do
-  @moduledoc """
-  Documentation for `DictionaryElixir`.
-  """
 
-  @doc """
-  Hello world.
+  def random_word do
+    Enum.random(word_list)
+  end
 
-  ## Examples
-
-      iex> DictionaryElixir.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def word_list do
+    contents = File.read!("assets/words.txt")
+    list = String.split(contents, ~r/\n/)
   end
 end
